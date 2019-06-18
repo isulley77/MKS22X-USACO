@@ -22,6 +22,16 @@ public class USACO{
     N = assign[3];
 
 
+    int[][] board = new int[R][C];
+
+    for(int i = 0; i < R; i++){
+      for(int j = 0; j < C; i++){
+        board[i][j] = Integer.parseInt(s.next());
+      }
+    }
+
+
+
 
 
     return solution;
