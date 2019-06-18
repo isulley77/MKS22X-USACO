@@ -25,9 +25,40 @@ public class USACO{
     int[][] board = new int[R][C];
 
     for(int i = 0; i < R; i++){
-      for(int j = 0; j < C; i++){
+      for(int j = 0; j < C; j++){
         board[i][j] = Integer.parseInt(s.next());
       }
+    }
+
+
+    int counter = 0;
+
+    while(counter < N){
+
+      int row = Integer.parseInt(s.next()) - 1;
+      int col = Integer.parseInt(s.next()) - 1;
+      int stomp = Integer.parseInt(s.next());
+
+      int maximum = 0;
+
+      for(int r = row; r < row + 3; r++){
+        for(int c = col; c < col + 3; c++){
+          if(board[r][c] > maximum){
+            maximum = board[r][c];
+          }
+        }
+      }
+
+      for(int r = row; r < row + 3; r++){
+        for(int c = col; c < col + 3; c++){
+          int d = maximum - board[r][c];
+
+          if(d < stomp){
+            board[r][c] = maximum - stomp;
+          }
+        }
+      }
+      counter++;
     }
 
 
