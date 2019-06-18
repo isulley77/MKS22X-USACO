@@ -61,10 +61,17 @@ public class USACO{
       counter++;
     }
 
+    for(int r = 0; r < R; r++){
+      for(int c = 0; c < C; c++){
+        int current = board[r][c];
 
+        if(E - current > 0){
+          solution += E - current;
+        }
+      }
+    }
 
-
-
+    solution = solution * 72 * 72;
     return solution;
   }
 
